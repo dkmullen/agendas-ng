@@ -1,10 +1,15 @@
 <div class="agendas">
   <h1>Agendas</h1>
-  <div *ngFor="let item of agendas">
-    <div>{{ item.title }} - <span class="link" [innerHTML]="item.link"></span></div>
+  <div class="ui segments">
+    <div class="ui active centered inline loader" *ngIf="loading"></div>
+    <div *ngFor="let item of agendas" class="agenda-list ui segment">
+      <div><strong>{{ item.title }}:</strong> <a [href]="item.link" target="_blank" class="date">{{ item.date }}</a></div>
+    </div>
   </div>
-  <p>
-    Data for this page is scraped by a Lambda function on AWS, which is triggered, when this page calls
+  <p *ngIf="!loading">
+    Data for this page is scraped by a Lambda function 
+    (<a href="https://github.com/dkmullen/agendafinder" target="_blank">review on Github</a>) 
+    on AWS which is triggered when this page calls
     the API at the AWS API Gateway.
   </p>
 </div>

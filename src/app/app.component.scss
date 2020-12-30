@@ -1,7 +1,19 @@
 .agendas {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.agenda-list {
     line-height: 2;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(80, 163, 80);
+}
+
+.date {
+    margin-left: 7px;
 }
 

@@ -10,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit {
   data = {};
   agendas = [];
+  loading = true;
+
   constructor(private http: HttpClient){}
 
   ngOnInit() {
@@ -19,6 +21,8 @@ export class AppComponent implements OnInit {
       for (let item in this.data) {
         this.agendas.push(this.data[item]);
       }
+      this.loading = false;
+      console.log(this.agendas)
     })
   }
 
